@@ -1,0 +1,1 @@
+scp -r dist/* root@s:/var/www/wechat/public/

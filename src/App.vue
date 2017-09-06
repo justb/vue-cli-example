@@ -12,7 +12,8 @@ export default {
   name: 'app',
   data: function() {
     return {
-      childMes: ''
+      childMes: '',
+      
     }
   },
   methods: {

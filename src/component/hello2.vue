@@ -1,5 +1,6 @@
 <template>
     <div>
+        <carrousel v-bind:data-father="dataFather"></carrousel>
         <el-button @click="show = !show">Click Me</el-button>
 
         <div style="display: flex; margin-top: 20px; height: 100px;">
@@ -17,14 +18,22 @@
         <el-button type="primary">上传
             <i class="el-icon-upload el-icon--right"></i>
         </el-button>
+        
     </div>
 </template>
 
 <script>
 export default {
     name: 'hello2',
+
     data() {
         return {
+            dataFather: [
+                'http://ovui67ajj.bkt.clouddn.com/u=714158082,691074620&fm=26&gp=0.jpg',
+                'http://ovui67ajj.bkt.clouddn.com/u=714158082,691074620&fm=26&gp=0.jpg',
+                'http://ovui67ajj.bkt.clouddn.com/u=714158082,691074620&fm=26&gp=0.jpg',
+
+            ],
             show: true
         }
     }

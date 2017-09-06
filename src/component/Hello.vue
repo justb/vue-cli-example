@@ -1,15 +1,22 @@
 <template>
-  <ul class="list">
-    <todo-item v-for="item in lists" v-bind:todo="item" v-bind:key="item.title">{{item.title}}</todo-item>
-  </ul>
+  <div>
+    <carrousel></carrousel>
+    <ul class="list">
+      <li v-for="(item,index) in lists" v-bind:key="index" v>{{item.title}}</li>
+    </ul>
+  </div>
 </template>
 
 <script>
-import Vue from 'vue'
-Vue.component('todo-item', {
-  props: ['todo'],
-  template: '<li>{{ todo.title }}</li>'
-})
+export default {
+  name: 'Hello',
+  data() {
+    return {
+      show: true,
+      lists: [{ title: 10000000000000 }]
+    }
+  }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
