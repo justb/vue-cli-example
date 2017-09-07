@@ -1,6 +1,5 @@
 <template>
   <div>
-    <carrousel></carrousel>
     <ul class="list">
       <li v-for="(item,index) in lists" v-bind:key="index" v>{{item.title}}</li>
     </ul>
@@ -13,7 +12,7 @@ export default {
   data() {
     return {
       show: true,
-      lists: [{ title: 10000000000000 }]
+      lists: [{ title: 111111111111111 }]
     }
   }
 }

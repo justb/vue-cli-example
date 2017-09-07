@@ -1,7 +1,7 @@
 <template>
     <swiper :options="swiperOption" :not-next-tick="notNextTick" ref="mySwiper">
         <!-- slides -->
-        <swiper-slide class="slide" v-for="(data,index) in Father" v-bind:key="index" v-bind:style="[data]"><img :src='data'></swiper-slide>
+        <swiper-slide class="slide" v-for="(data,index) in Father" v-bind:key="index" v-bind:style="[data]"></swiper-slide>
 
         <!-- Optional controls -->
         <div class="swiper-pagination" slot="pagination"></div>
@@ -19,12 +19,13 @@ export default {
         dataFather: Array
     },
     created() {
-        // console.log(dataFather)
+        console.log(123123333333333333333)
     },
     data() {
         return {
             // NotNextTick is a component's own property, and if notNextTick is set to true, the component will not instantiate the swiper through NextTick, which means you can get the swiper object the first time (if you need to use the get swiper object to do what Things, then this property must be true)
             // notNextTick是一个组件自有属性，如果notNextTick设置为true，组件则不会通过NextTick来实例化swiper，也就意味着你可以在第一时间获取到swiper对象，假如你需要刚加载遍使用获取swiper对象来做什么事，那么这个属性一定要是true
+            // dataFather:Array,
             notNextTick: true,
             swiperOption: {
                 // swiper optionss 所有的配置同swiper官方api配置
@@ -62,9 +63,12 @@ export default {
             return this.$refs.mySwiper.swiper
         },
         Father: function() {
-            return this.dataFather.map(x=>{
-                return {"background-image":"url("+x+")",height:'500px'}
-            })
+            if (this.dataFather) {
+                return this.dataFather.map(x => {
+                    return { "background-image": "url(" + x + ")", height: '500px' }
+                })
+            }
+
         }
     },
     mounted() {
