@@ -112,9 +112,9 @@ var webpackConfig = merge(baseWebpackConfig, {
       to: config.build.assetsSubDirectory,
       ignore: ['.*']
     }]),
-    new MyPlugin({
-      options: ''
-    })
+    // new MyPlugin({
+    //   options: ''
+    // })
   ]
 })
 
