@@ -38,7 +38,7 @@ function Traversal(path) {
 }
 // 文件上传
 Promise.all(Traversal("./dist").map((localFile) => {
-  if (!localFile.endsWith(".map")) {
+  if (!localFile.endsWith(".map")&&!localFile.endsWith(".html")) {
     return new Promise((resolve, reject) => formUploader.putFile(uploadToken, localFile.substr(7), localFile, putExtra, function (respErr, respBody, respInfo) {
       if (respErr) {
         throw respErr;
@@ -46,12 +46,12 @@ Promise.all(Traversal("./dist").map((localFile) => {
       if (respInfo.statusCode == 200) {
         resolve(respBody);
       } else {
-        reject(respInfo.statusCode, respBody);
+        reject(respBody.error);
       }
     }))
   }
 })).then(() => {
   console.log("All files upload ok!")
-}).catch(() => {
-  console.log("file upload failed!")
+}).catch((data) => {
+  console.log("Some files upload failed! Because "+data)
 })
