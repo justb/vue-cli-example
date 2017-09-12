@@ -1,4 +1,4 @@
-{
+module.exports={
     "src_dir" : "./dist/static/",
     "bucket" : "kim2",
     "ak" : "D0kBjb8UpWlNtfKDUwkPkG1m1oIHE6mpnYIa3Yvw",

@@ -3,7 +3,7 @@ var qiniu = require("qiniu");
 var accessKey = 'D0kBjb8UpWlNtfKDUwkPkG1m1oIHE6mpnYIa3Yvw';
 var secretKey = 'zs5E454laPxsVe3pVppClFXYgjcX1_k7Dkk82htq';
 //要上传的空间
-var bucket = 'kim2';
+var bucket = 'file';
 //上传到七牛后保存的文件名
 var mac = new qiniu.auth.digest.Mac(accessKey, secretKey)
 
@@ -38,7 +38,7 @@ function Traversal(path) {
 }
 // 文件上传
 Promise.all(Traversal("./dist").map((localFile) => {
-  if (!localFile.endsWith(".map")) {
+  if (!localFile.endsWith(".map")&&!localFile.endsWith(".html")) {
     return new Promise((resolve, reject) => formUploader.putFile(uploadToken, localFile.substr(7), localFile, putExtra, function (respErr, respBody, respInfo) {
       if (respErr) {
         throw respErr;
