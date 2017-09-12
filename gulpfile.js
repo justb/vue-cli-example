@@ -7,8 +7,6 @@ gulp.task('default', function () {
   console.log('this is the default task')
 })
 
-
-
 var options = {
   continueOnError: false, // default = false, true means don't emit error event 
   pipeStdout: false, // default = false, true means stdout is written to file.contents 
@@ -33,9 +31,11 @@ gulp.task('upload-qiniu', ['npm-build'],function () {
     .pipe(exec.reporter(reportOptions));
 });
 
-gulp.task('upload-server', ['npm-build','upload-qiniu'],function () {
+gulp.task('upload-server',['npm-build','upload-qiniu'],function () {
+  var b = 'dist/index.html'
+  var a= `scp -r ${b} root@s:/var/www/wechat/public/`
   return gulp.src('')
-    .pipe(exec('scp -r dist/index.html root@s:/var/www/wechat/public/', options))
+    .pipe(exec(a, options))
     .pipe(exec.reporter(reportOptions));
 });
 

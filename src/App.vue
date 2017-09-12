@@ -1,9 +1,10 @@
 <template>
   <div id="app">
+    <router-view></router-view>
     <img src="./assets/logo.png">
     <list mes-father="message from father" @valueUp="recieve"></list>
     <p>子组件传递过来的数据 {{childMes}}</p>
-    <router-view></router-view>
+    
   </div>
 </template>
 

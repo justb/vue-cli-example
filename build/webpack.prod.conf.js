@@ -19,7 +19,7 @@ MyPlugin.prototype.apply = function (compiler) {
     compilation.plugin('html-webpack-plugin-before-html-processing', function (htmlPluginData, callback) {
       htmlPluginData.assets.js.map((x, i) => {
         if (x.includes('vendor.')) {
-          htmlPluginData.assets.js[i] = 'http://image.kim1.kim/vendor.js';
+          htmlPluginData.assets.js[i] = 'http://file.kim1.kim/vendor.js';
         }
       })
       callback(null, htmlPluginData);

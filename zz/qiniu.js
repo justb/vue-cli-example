@@ -38,11 +38,12 @@ function Traversal(path) {
 }
 // 文件上传
 Promise.all(Traversal("./dist").map((localFile) => {
-  if (!localFile.endsWith(".map")&&!localFile.endsWith(".html")) {
+  if (!localFile.endsWith(".map")) {
     return new Promise((resolve, reject) => formUploader.putFile(uploadToken, localFile.substr(7), localFile, putExtra, function (respErr, respBody, respInfo) {
       if (respErr) {
         throw respErr;
       }
+      console.log(respInfo.statusCode)
       if (respInfo.statusCode == 200) {
         resolve(respBody);
       } else {

@@ -5,7 +5,7 @@ var secretKey = config.sk;
 var mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
 var cdnManager = new qiniu.cdn.CdnManager(mac);
 //预取链接
-cdnManager.prefetchUrls(["http://www.kim1.kim/index.html"], function(err, respBody, respInfo) {
+cdnManager.prefetchUrls(["http://file.kim1.kim/index.html"], function(err, respBody, respInfo) {
   if (err) {
     throw err;
   }

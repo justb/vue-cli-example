@@ -29,9 +29,9 @@ export default {
     data() {
         return {
             dataFather: [
-                'http://ovui67ajj.bkt.clouddn.com/u=714158082,691074620&fm=26&gp=0.jpg',
-                'http://ovui67ajj.bkt.clouddn.com/u=714158082,691074620&fm=26&gp=0.jpg',
-                'http://ovui67ajj.bkt.clouddn.com/u=714158082,691074620&fm=26&gp=0.jpg',
+                './assets/background.jpg',
+                './assets/logo.png',
+                'background.jpg',
 
             ],
             show: true

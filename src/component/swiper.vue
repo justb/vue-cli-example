@@ -1,7 +1,7 @@
 <template>
     <swiper :options="swiperOption" :not-next-tick="notNextTick" ref="mySwiper">
         <!-- slides -->
-        <swiper-slide class="slide" v-for="(data,index) in Father" v-bind:key="index" v-bind:style="[data]"></swiper-slide>
+        <swiper-slide class="slide" v-for="(data,index) in Father" v-bind:key="index" v-bind:style="data"></swiper-slide>
 
         <!-- Optional controls -->
         <div class="swiper-pagination" slot="pagination"></div>
@@ -65,7 +65,7 @@ export default {
         Father: function() {
             if (this.dataFather) {
                 return this.dataFather.map(x => {
-                    return { "background-image": "url(" + x + ")", height: '500px' }
+                    return { "background-image": "url(" + require(x) + ")", height: '500px' }
                 })
             }
 

@@ -12,7 +12,7 @@ export default {
   data() {
     return {
       show: true,
-      lists: [{ title: 111111111111111 }]
+      lists: [{ title: 123 }]
     }
   }
 }
