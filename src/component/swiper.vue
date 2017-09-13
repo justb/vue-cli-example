@@ -65,7 +65,7 @@ export default {
         Father: function() {
             if (this.dataFather) {
                 return this.dataFather.map(x => {
-                    return { "background-image": "url(" + require(x) + ")", height: '500px' }
+                    return { "background-image": "url(" +x + ")", height: '500px' }
                 })
             }
 

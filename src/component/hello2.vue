@@ -29,9 +29,9 @@ export default {
     data() {
         return {
             dataFather: [
-                './assets/background.jpg',
-                './assets/logo.png',
-                'background.jpg',
+                'http://image.kim1.kim/background1.jpg',
+                'http://image.kim1.kim/background1.jpg',
+                'http://image.kim1.kim/background1.jpg',
 
             ],
             show: true

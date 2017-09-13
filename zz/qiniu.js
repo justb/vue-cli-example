@@ -38,7 +38,7 @@ function Traversal(path) {
 }
 // 文件上传
 Promise.all(Traversal("./dist").map((localFile) => {
-  if (!localFile.endsWith(".map")) {
+  if (!localFile.endsWith(".map") && !localFile.endsWith(".html")) {
     return new Promise((resolve, reject) => formUploader.putFile(uploadToken, localFile.substr(7), localFile, putExtra, function (respErr, respBody, respInfo) {
       if (respErr) {
         throw respErr;
@@ -54,5 +54,5 @@ Promise.all(Traversal("./dist").map((localFile) => {
 })).then(() => {
   console.log("All files upload ok!")
 }).catch((data) => {
-  console.log("Some files upload failed! Because "+data)
+  console.log("Some files upload failed! Because " + data)
 })

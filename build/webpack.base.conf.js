@@ -46,11 +46,11 @@ module.exports = {
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test')]
       },
-      {
-        test: /\.scss$/,
-        loaders: ["style", "css", "sass"],
-        include: [resolve('src')]
-      },
+      // {
+      //   test: /\.scss$/,
+      //   loaders: ["style", "css", "sass"],
+      //   include: [resolve('src')]
+      // },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
