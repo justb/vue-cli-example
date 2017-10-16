@@ -8,11 +8,13 @@ import ElementUI from 'element-ui'
 import './assets/common.scss'
 import './theme/index.css'
 import list from '@/component/List'
+import getValue from '@/component/getValue'
 import carrousel from '@/component/swiper'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 
 Vue.component('list',list)
+Vue.component('getValue',getValue)
 Vue.component('carrousel',carrousel)
 
 Vue.config.productionTip = false

@@ -33,7 +33,7 @@ gulp.task('upload-qiniu', ['npm-build'],function () {
 
 gulp.task('upload-server',['npm-build','upload-qiniu'],function () {
   var b = 'dist/index.html'
-  var a= `scp -r ${b} root@s:/var/www/wechat/public/`
+  var a= `scp -r ${b} root@s:/var/www/vue/public/`
   return gulp.src('')
     .pipe(exec(a, options))
     .pipe(exec.reporter(reportOptions));

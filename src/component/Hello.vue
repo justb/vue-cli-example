@@ -3,6 +3,7 @@
     <ul class="list">
       <li v-for="(item,index) in lists" v-bind:key="index" v>{{item.title}}</li>
     </ul>
+    <input v-model="question">
   </div>
 </template>
 
@@ -14,7 +15,7 @@ export default {
       show: true,
       lists: [{ title: 123 }]
     }
-  }
+  },
 }
 </script>
 
