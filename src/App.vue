@@ -2,8 +2,8 @@
   <div id="app">
     <router-view></router-view>
     <img src="./assets/logo.png">
-    <list mes-father="message from father" @valueUp="recieve"></list>
-    <p>子组件传递过来的数据 {{childMes}}</p>
+    <list mes-father="message from father" @valueUp="recieve" @event-a="doThis"></list>
+    <p >子组件传递过来的数据 {{childMes}}</p>
     <input v-model="question">
     <input v-model="name">
     <input v-model="firstName">
@@ -43,6 +43,9 @@ export default {
     recieve: function(mes) { // recieve 事件需要设置参数，这些参数就是子组件传递过来的数据，因此，参数的个数，也要和子元素传递过来的一致。
       console.log(mes);
       this.childMes = mes;
+    },
+    doThis: function(){
+      alert(123)
     }
   },
   watch: {
