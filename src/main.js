@@ -12,6 +12,7 @@ import getValue from '@/component/getValue'
 import carrousel from '@/component/swiper'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
+import store from './store'
 
 Vue.component('list',list)
 Vue.component('getValue',getValue)
@@ -26,6 +27,7 @@ Vue.use(VueAwesomeSwiper)
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App }
 })

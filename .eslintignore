@@ -2,3 +2,4 @@ build/*.js
 config/*.js
 /*.js
 zz/*.js
+src/store/*.js
