@@ -7,17 +7,15 @@ import router from './router'
 import ElementUI from 'element-ui'
 import './assets/common.scss'
 import './theme/index.css'
-import list from '@/component/List'
-import getValue from '@/component/getValue'
 import carrousel from '@/component/swiper'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
-import store from './store'
+import counter from './store/modules/counter.js'
 import Vuex from 'vuex'
+import { sync } from 'vuex-router-sync';
 
-Vue.component('list',list)
-Vue.component('getValue',getValue)
-Vue.component('carrousel',carrousel)
+
+Vue.component('carrousel', carrousel)
 
 Vue.config.productionTip = false
 
@@ -25,11 +23,17 @@ Vue.use(ElementUI)
 Vue.use(VueAwesomeSwiper)
 Vue.use(Vuex)
 
+const store = new Vuex.Store({
+  modules: {
+    counter
+  }
+})
+sync(store, router);
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
-  // store,
+  store,
   template: '<App/>',
   components: { App }
 })

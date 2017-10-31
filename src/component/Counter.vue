@@ -9,7 +9,7 @@
       <div>Recent History (last 5 entries): {{ recentHistory }}</div>
     </div> -->
     <div>{{fooCount}}</div>
-    <button @click="inc">Increment async</button>
+    <button @click="inc()">Increment async</button>
   </div>
 </template>
 
@@ -34,14 +34,9 @@
 //   }
 // }
 
-import fooStoreModule from "../store/counter";
+// import fooStoreModule from "../store/counter";
 
 export default {
-  asyncData({ store }) {
-    console.log(123);
-    store.registerModule("foo", fooStoreModule);
-    return store.dispatch("foo/inc");
-  },
   // 重要信息：当多次访问路由时，
   // 避免在客户端重复注册模块。
   destroyed() {
@@ -49,16 +44,17 @@ export default {
   },
   computed: {
     fooCount() {
-      // return this.$store.state.count;
+      return this.$store.state.counter.count;
     }
   },
-  install(store ) {
-    console.log(store);
-    store.registerModule("foo", fooStoreModule);
-  },
+  // beforeCreate(store) {
+  //   console.log(store);
+  //   store.registerModule("foo", fooStoreModule);
+  // },
   methods: {
     inc() {
-      this.$store.dispatch("increment");
+      console.log(this.$store)
+      this.$store.dispatch('counter/inc')
     }
   }
 };
